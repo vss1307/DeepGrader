@@ -1,0 +1,188 @@
+
+/* Dashboard Layout */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Profile Card Styling */
+.profile-card {
+    background-color: #f8f9fa;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-card p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.profile-card strong {
+    color: #2c3e50;
+    width: 100px;
+    display: inline-block;
+}
+
+/* Classroom Card Styling */
+.classroom-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* General Card Styling */
+.card {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+h3 {
+    color: #34495e;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+h4 {
+    color: #34495e;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Code Display */
+.code-display {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Button Styling */
+.btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-info {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    border-color: #95a5a6;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+}
+
+/* Student List */
+.list-group {
+    margin-top: 15px;
+}
+
+.list-group-item {
+    padding: 10px 15px;
+    border: 1px solid #eee;
+    margin-bottom: -1px;
+    background-color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Nested Classroom Cards */
+.classroom-card .card {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+}
+
+.classroom-card .card:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 0 10px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .code-display {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .code-display button {
+        margin-top: 10px;
+    }
+}
+
+/* add assignment */
+.assignment-form-wrapper {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.assignment-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* view all submissions */
+.table-responsive {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.table {
+    margin-bottom: 0;  /* Remove default margin to look better within border */
+}

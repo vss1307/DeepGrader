@@ -3,17 +3,17 @@
 
 {% block content %}
 <div class="container">
-    <h2>Assignment Submission</h2>
+    <h2 style="text-align: center;margin-bottom: 10px;">Assignment Submission</h2>
     <div class="card mb-4">
         <div class="card-body">
-            <h3>{{ assignment.title }}</h3>
+            <h3 style="text-align: center; font-size: 2em;">{{ assignment.title }}</h3>
             <h4>Questions:</h4>
             <p>{{ assignment.questions }}</p>
         </div>
     </div>
 
     <div class="mt-4">
-        <h3>Your Submission:</h3>
+        <h3>{{ student_username }}'s Submission:</h3>
         <div class="card mb-3">
             <div class="card-body">
                 <p>{{ submission.answer }}</p>

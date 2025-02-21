@@ -7,7 +7,10 @@ import random
 import string
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, 
+    static_folder='static',  # Make sure this matches your folder name
+    static_url_path='/static'
+)
 app.secret_key = os.urandom(24)
 
 # MongoDB Connection
@@ -377,7 +380,8 @@ def view_submission(classroom_code, assignment_id):
             return redirect(url_for('view_classroom', classroom_code=classroom_code))
         
         submission = assignment['submissions'][session['username']]
-        return render_template('view_submission.html', 
+        return render_template('view_submission.html',
+                                
                              assignment=assignment,
                              submission=submission)
     
@@ -437,6 +441,7 @@ def view_student_submission(classroom_code, assignment_id, student_username):
         
         submission = assignment['submissions'][student_username]
         return render_template('view_submission.html', 
+                             student_username=student_username,
                              assignment=assignment,
                              submission=submission)
     except IndexError:

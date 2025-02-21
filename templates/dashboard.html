@@ -2,10 +2,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="mb-4">Dashboard</h1>
-<div class="row">
-    <div class="col-md-4">
-        <div class="card">
+<h1 class="mb-4" style="text-align: center;">Dashboard</h1>
+<div class="dashboard-container">
+    <!-- Profile Card - Now at the top -->
+    <div class="profile-section mb-4">
+        <div class="card profile-card">
             <h3>Profile Information</h3>
             <p><strong>Username:</strong> {{ user.username }}</p>
             <p><strong>Email:</strong> {{ user.email }}</p>
@@ -13,9 +14,10 @@
         </div>
     </div>
     
-    <div class="col-md-8">
+    <!-- Classroom Section -->
+    <div class="classroom-section">
         {% if user.role == 'teacher' %}
-            <div class="card">
+            <div class="card classroom-card">
                 <h3>Your Classroom</h3>
                 {% if classroom %}
                     <div class="code-display">
@@ -39,7 +41,7 @@
                 {% endif %}
             </div>
         {% else %}
-            <div class="card">
+            <div class="card classroom-card">
                 <h3>Your Classrooms</h3>
                 {% if joined_classrooms %}
                     {% for classroom in joined_classrooms %}

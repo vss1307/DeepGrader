@@ -1,76 +1,83 @@
-<!-- templates/add_assignment.html -->
 {% extends "base.html" %}
 
 {% block content %}
+
+
 <div class="container">
-    <h2>Add New Assignment</h2>
-    <form method="POST" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label for="title" class="form-label">Assignment Title</label>
-            <input type="text" class="form-control" id="title" name="title" required>
-        </div>
+    <div class="assignment-form-wrapper">
+        <h2 class="assignment-heading">Add New Assignment</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <!-- Rest of your form remains exactly the same -->
+            <div class="mb-3">
+                <label for="title" class="form-label">Assignment Title</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
 
-        <div class="mb-3">
-            <label class="form-label">Questions</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="questions_type" id="questions_text" value="text" checked>
-                <label class="form-check-label" for="questions_text">
-                    Enter Text
-                </label>
+            <div class="mb-3">
+                <label class="form-label">Questions</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="questions_type" id="questions_text" value="text" checked>
+                    <label class="form-check-label" for="questions_text">
+                        Enter Text
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="questions_type" id="questions_pdf" value="pdf">
+                    <label class="form-check-label" for="questions_pdf">
+                        Upload PDF
+                    </label>
+                </div>
+                <div id="questions_text_input" class="mt-2">
+                    <textarea class="form-control" name="questions_text" rows="5"></textarea>
+                </div>
+                <div id="questions_pdf_input" class="mt-2" style="display: none;">
+                    <input type="file" class="form-control" name="questions_pdf" accept=".pdf">
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="questions_type" id="questions_pdf" value="pdf">
-                <label class="form-check-label" for="questions_pdf">
-                    Upload PDF
-                </label>
-            </div>
-            <div id="questions_text_input" class="mt-2">
-                <textarea class="form-control" name="questions_text" rows="5"></textarea>
-            </div>
-            <div id="questions_pdf_input" class="mt-2" style="display: none;">
-                <input type="file" class="form-control" name="questions_pdf" accept=".pdf">
-            </div>
-        </div>
 
-        <div class="mb-3">
-            <label class="form-label">Model Answers</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="answers_type" id="answers_text" value="text" checked>
-                <label class="form-check-label" for="answers_text">
-                    Enter Text
-                </label>
+            <div class="mb-3">
+                <label class="form-label">Model Answers</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answers_type" id="answers_text" value="text" checked>
+                    <label class="form-check-label" for="answers_text">
+                        Enter Text
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answers_type" id="answers_pdf" value="pdf">
+                    <label class="form-check-label" for="answers_pdf">
+                        Upload PDF
+                    </label>
+                </div>
+                <div id="answers_text_input" class="mt-2">
+                    <textarea class="form-control" name="answers_text" rows="5"></textarea>
+                </div>
+                <div id="answers_pdf_input" class="mt-2" style="display: none;">
+                    <input type="file" class="form-control" name="answers_pdf" accept=".pdf">
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="answers_type" id="answers_pdf" value="pdf">
-                <label class="form-check-label" for="answers_pdf">
-                    Upload PDF
-                </label>
-            </div>
-            <div id="answers_text_input" class="mt-2">
-                <textarea class="form-control" name="answers_text" rows="5"></textarea>
-            </div>
-            <div id="answers_pdf_input" class="mt-2" style="display: none;">
-                <input type="file" class="form-control" name="answers_pdf" accept=".pdf">
-            </div>
-        </div>
 
-        <button type="submit" class="btn btn-primary">Add Assignment</button>
-    </form>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Add Assignment</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <script>
-document.querySelectorAll('input[name="questions_type"]').forEach((elem) => {
-  elem.addEventListener("change", function(event) {
-    document.getElementById("questions_text_input").style.display = event.target.value === "text" ? "block" : "none";
-    document.getElementById("questions_pdf_input").style.display = event.target.value === "pdf" ? "block" : "none";
-  });
-});
+    // Your existing JavaScript remains the same
+    document.querySelectorAll('input[name="questions_type"]').forEach((elem) => {
+        elem.addEventListener("change", function(event) {
+            document.getElementById("questions_text_input").style.display = event.target.value === "text" ? "block" : "none";
+            document.getElementById("questions_pdf_input").style.display = event.target.value === "pdf" ? "block" : "none";
+        });
+    });
 
-document.querySelectorAll('input[name="answers_type"]').forEach((elem) => {
-  elem.addEventListener("change", function(event) {
-    document.getElementById("answers_text_input").style.display = event.target.value === "text" ? "block" : "none";
-    document.getElementById("answers_pdf_input").style.display = event.target.value === "pdf" ? "block" : "none";
-  });
-});
+    document.querySelectorAll('input[name="answers_type"]').forEach((elem) => {
+        elem.addEventListener("change", function(event) {
+            document.getElementById("answers_text_input").style.display = event.target.value === "text" ? "block" : "none";
+            document.getElementById("answers_pdf_input").style.display = event.target.value === "pdf" ? "block" : "none";
+        });
+    });
 </script>
 {% endblock %}

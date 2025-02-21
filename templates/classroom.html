@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container">
-    <h2>Classroom: {{ classroom.code }}</h2>
+    <h2>Classroom: {{ classroom.name }}</h2>
     <h3>Teacher: {{ classroom.teacher }}</h3>
 
     <div class="assignments mt-4">
@@ -12,7 +12,7 @@
             {% for assignment in classroom.assignments %}
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h4 class="card-title">{{ assignment.title }}</h4>
+                        <h4 class="card-title" style="text-align: center;font-size: 2em;">{{ assignment.title }}</h4>
                         <h5>Questions:</h5>
                         <p class="card-text">{{ assignment.questions }}</p>
                         {% if user.role == 'teacher' %}
